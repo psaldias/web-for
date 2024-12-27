@@ -1,0 +1,54 @@
+---
+import imgfairness from '../assets/core-fairness.jpg';
+import efficiency from '../assets/core-efficiency.jpg';
+import community from '../assets/core-community.jpg';
+import trust from '../assets/core-trust.jpg';
+
+const values = [
+    {
+        name: 'Fairness',
+        description: 'We stand against exploitative and outdated practices. We are committed to fair recognition and compensation for reviewers and editors, honoring the time, expertise, and effort they contribute to advancing scientific knowledge.',
+        imagen: imgfairness.src
+    },
+    {
+        name: 'Efficiency',
+        description: 'We break down barriers to fast, reliable publishing. We prioritize an efficient peer-review and publishing process that respects scientists’ time and accelerates the path from discovery to publication, without unnecessary delays.',
+        imagen: efficiency.src
+    },
+    {
+        name: 'Community',
+        description: 'We foster a collaborative network that empowers researchers, reviewers, and editors to take control of the publishing process, creating a supportive environment rooted in trust, shared responsibility, and collective progress.',
+        imagen: community.src
+    },
+    {
+        name: 'Trust',
+        description: 'We believe trust is indispensable to making it all work. By upholding rigorous standards, ensuring open access to research, and maintaining transparency in our business model, we build confidence in the quality and integrity of everything we do.',
+        imagen: trust.src
+    }
+]
+---
+
+<div class=" mt-10 sm:mt-20 ">
+
+<h2 class="text-center sm:text-4xl text-2xl font-bold font-serif mb-10">Core Values</h2>
+<div class="flex items-stretch justify-center gap-4 sm:space-x-0 flex-wrap">
+
+
+    {
+        values.map(value => (
+            <div class="w-40 sm:w-40 relative">
+                <div class="imagen rounded-t-full overflow-hidden h-48">
+                    <img src={value.imagen} alt={value.name} class="w-full h-full object-cover" />
+                </div>
+                <div class="absolute top-28
+                 imagen rounded-full overflow-hidden aspect-square w-full text-center flex items-center justify-center  bg-white text-sm sm:text-lg font-bold font-serif">
+                    {value.name}
+                </div>
+                <div class="bg-black text-white rounded-b-full h-[420px] sm:h-72 px-4 text-[.8em] sm:text-[.6em] pt-24  text-balance text-center sm:text-justify font-serif">
+                    {value.description}
+                </div>
+            </div>
+        ))
+    }
+</div>
+</div>
